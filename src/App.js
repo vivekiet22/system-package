@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import RightCarousel from "./components/RightCarousel";
+import LeftMain from "./components/LeftMain";
+import Container from "@mui/material/Container";
 
+import Grid from "@mui/material/Grid";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container sx={{ p: 4 }} maxWidth="md">
+      <Grid sx={{ height: "678px" }} container spacing={2}>
+        <Grid className="main" item sm={6} xs={12}>
+          <LeftMain />
+        </Grid>
+        <Grid className="side" item sm={6}>
+          <RightCarousel />
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
